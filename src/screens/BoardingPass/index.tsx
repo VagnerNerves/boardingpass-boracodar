@@ -5,6 +5,7 @@ import {
   Container,
   ContainerButton,
   ContainerCard,
+  ContainerLinearGradient,
   ContainerQRCode,
   ContainerText,
   ContainerTextData,
@@ -22,6 +23,8 @@ import {
 export function BoardingPass() {
   return (
     <Container>
+      <ContainerLinearGradient />
+
       <Title>Cartão de Embarque</Title>
 
       <ContainerCard marginTop20>

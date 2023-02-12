@@ -2,12 +2,14 @@ export default {
   colors: {
     white: '#FFF',
 
+    'grey-200': '#B6B0C5',
     'grey-300': '#ADADAD',
     'grey-500': '#5C5C5C',
     'grey-900': '#1F1F1F',
 
     'violet-500': '#8257e5',
-    'violet-700': '#633BBC'
+    'violet-700': '#633BBC',
+    'violet-900': '#271A45'
   },
   'font-family': {
     regular: 'Rubik_400Regular',

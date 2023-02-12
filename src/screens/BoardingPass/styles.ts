@@ -3,14 +3,27 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 import styled, { css } from 'styled-components/native'
 import QRCode from 'react-native-qrcode-svg'
 
+import { LinearGradient } from 'expo-linear-gradient'
+
 import Ionicons from '@expo/vector-icons/Ionicons'
 
 export const Container = styled(SafeAreaView)`
   flex: 1;
+
   align-items: center;
   justify-content: center;
 
   background-color: ${props => props.theme.colors['violet-500']};
+`
+
+export const ContainerLinearGradient = styled(LinearGradient).attrs(
+  ({ theme }) => ({
+    colors: [theme.colors['violet-500'], theme.colors['violet-900']]
+  })
+)`
+  position: absolute;
+  width: 100%;
+  height: 100%;
 `
 
 export const Title = styled.Text`
@@ -29,7 +42,7 @@ export const Description = styled.Text`
   ${props => css`
     font-family: ${props.theme['font-family'].regular};
     font-size: ${props.theme['font-size'].sm}px;
-    color: ${props.theme.colors['grey-900']};
+    color: ${props.theme.colors['grey-200']};
   `}
 `
 
@@ -217,13 +230,13 @@ export const ContainerQRCode = styled.View`
   padding: 10px;
 `
 
-export const QRCodeGenerated = styled(QRCode).attrs(props => ({
+export const QRCodeGenerated = styled(QRCode).attrs(() => ({
   value: 'https://github.com/VagnerNerves',
   size: 140
 }))``
 
-export const IconAirplane = styled(Ionicons).attrs(props => ({
+export const IconAirplane = styled(Ionicons).attrs(({ theme }) => ({
   name: 'airplane',
   size: 24,
-  color: props.theme.colors['grey-900']
+  color: theme.colors['grey-900']
 }))``
