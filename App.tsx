@@ -1,3 +1,4 @@
+import { StatusBar } from 'react-native'
 import { ThemeProvider } from 'styled-components/native'
 
 import {
@@ -16,6 +17,12 @@ export default function App() {
 
   return (
     <ThemeProvider theme={theme}>
+      <StatusBar
+        barStyle={'light-content'}
+        backgroundColor="transparent"
+        translucent
+      />
+
       {fonstLoaded ? <BoardingPass /> : <Loading />}
     </ThemeProvider>
   )
