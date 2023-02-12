@@ -2,6 +2,7 @@ export default {
   colors: {
     white: '#FFF',
 
+    'grey-300': '#ADADAD',
     'grey-500': '#5C5C5C',
     'grey-900': '#1F1F1F',
 
