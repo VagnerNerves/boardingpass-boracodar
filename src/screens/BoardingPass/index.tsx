@@ -1,4 +1,4 @@
-import { View } from 'react-native'
+import { QRCode } from '../../components/QRCode'
 
 import {
   ButtonText,
@@ -13,7 +13,6 @@ import {
   Divider,
   IconAirplane,
   Information,
-  QRCodeGenerated,
   Title,
   TitleAcronym,
   TitleInformation,
@@ -101,7 +100,7 @@ export function BoardingPass() {
           </ContainerTextData>
           <ContainerTextData>
             <ContainerQRCode>
-              <QRCodeGenerated />
+              <QRCode url="https://github.com/VagnerNerves" size={140} />
             </ContainerQRCode>
             <TitleInformation textAlignCenter>
               Grupo de embarque: 3

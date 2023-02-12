@@ -1,7 +1,6 @@
 import { SafeAreaView } from 'react-native-safe-area-context'
 
 import styled, { css } from 'styled-components/native'
-import QRCode from 'react-native-qrcode-svg'
 
 import { LinearGradient } from 'expo-linear-gradient'
 
@@ -229,11 +228,6 @@ export const ButtonText = styled.View<ButtonTextProps>`
 export const ContainerQRCode = styled.View`
   padding: 10px;
 `
-
-export const QRCodeGenerated = styled(QRCode).attrs(() => ({
-  value: 'https://github.com/VagnerNerves',
-  size: 140
-}))``
 
 export const IconAirplane = styled(Ionicons).attrs(({ theme }) => ({
   name: 'airplane',
