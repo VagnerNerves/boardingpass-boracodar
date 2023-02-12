@@ -1,5 +1,7 @@
-import Ionicons from '@expo/vector-icons/Ionicons'
 import styled, { css } from 'styled-components/native'
+import QRCode from 'react-native-qrcode-svg'
+
+import Ionicons from '@expo/vector-icons/Ionicons'
 
 export const Container = styled.View`
   flex: 1;
@@ -29,7 +31,11 @@ export const Description = styled.Text`
   `}
 `
 
-export const FlightInfo = styled.View`
+interface ContainerCardProps {
+  marginTop20?: boolean
+  marginBottom20?: boolean
+}
+export const ContainerCard = styled.View<ContainerCardProps>`
   background-color: ${props => props.theme.colors.white};
 
   width: 327px;
@@ -37,12 +43,23 @@ export const FlightInfo = styled.View`
 
   border-radius: 24px;
 
-  margin-top: 20px;
+  ${props =>
+    props.marginTop20 &&
+    css`
+      margin-top: 20px;
+    `}
+  ${props =>
+    props.marginBottom20 &&
+    css`
+      margin-bottom: 20px;
+    `}
+
   align-items: center;
 `
 
 interface PropsContainerText {
   marginBottom24?: boolean
+  justifyContentCenter?: boolean
 }
 export const ContainerText = styled.View<PropsContainerText>`
   ${props =>
@@ -53,7 +70,8 @@ export const ContainerText = styled.View<PropsContainerText>`
 
   width: 100%;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: ${props =>
+    props.justifyContentCenter ? 'center' : 'space-between'};
 `
 
 export const ContainerTextData = styled.View`
@@ -62,6 +80,7 @@ export const ContainerTextData = styled.View`
 
 interface PropsTextAlign {
   textAlignRight?: boolean
+  textAlignCenter?: boolean
 }
 
 export const TitleInformation = styled.Text<PropsTextAlign>`
@@ -76,19 +95,41 @@ export const TitleInformation = styled.Text<PropsTextAlign>`
     css`
       text-align: right;
     `}
+
+    ${props =>
+    props.textAlignCenter &&
+    css`
+      text-align: center;
+    `}
 `
 
-export const Information = styled.Text<PropsTextAlign>`
+interface InformationProps {
+  textAlignRight?: boolean
+  marginBottom16?: boolean
+  isColorWhite?: boolean
+  fontFamilyRegular?: boolean
+}
+export const Information = styled.Text<InformationProps>`
   ${props => css`
-    font-family: ${props.theme['font-family'].medium};
+    font-family: ${props.fontFamilyRegular
+      ? props.theme['font-family'].regular
+      : props.theme['font-family'].medium};
     font-size: ${props.theme['font-size'].md}px;
-    color: ${props.theme.colors['grey-900']};
+    color: ${props.isColorWhite
+      ? props.theme.colors.white
+      : props.theme.colors['grey-900']};
   `}
 
   ${props =>
     props.textAlignRight &&
     css`
       text-align: right;
+    `}
+
+    ${props =>
+    props.marginBottom16 &&
+    css`
+      margin-bottom: 16px;
     `}
 `
 
@@ -121,20 +162,23 @@ export const TitleTime = styled.Text<PropsTextAlign>`
 `
 
 interface PropsDivider {
-  isApllyTop: boolean
+  isApllyTop?: boolean
+  isApllyBottom?: boolean
 }
 export const Divider = styled.View<PropsDivider>`
   width: 290px;
   height: 1px;
 
   ${props =>
-    props.isApllyTop
-      ? css`
-          top: -1px;
-        `
-      : css`
-          bottom: -1px;
-        `}
+    props.isApllyTop &&
+    css`
+      top: -1px;
+    `}
+  ${props =>
+    props.isApllyBottom &&
+    css`
+      bottom: -1px;
+    `}  
 
   border-color: ${props => props.theme.colors['grey-300']};
   border-style: dashed;
@@ -142,16 +186,39 @@ export const Divider = styled.View<PropsDivider>`
   position: absolute;
 `
 
-export const PassangerInfo = styled.View`
-  background-color: ${props => props.theme.colors.white};
+export const ContainerButton = styled.View`
+  align-items: flex-start;
+`
 
-  width: 327px;
-  padding: 24px 32px;
-
-  border-radius: 24px;
+interface ButtonTextProps {
+  marginBottom16?: boolean
+}
+export const ButtonText = styled.View<ButtonTextProps>`
+  ${props => css`
+    background-color: ${props.theme.colors['violet-700']};
+  `}
 
   align-items: center;
+  justify-content: center;
+
+  border-radius: 8px;
+  padding: 4px 8px;
+
+  ${props =>
+    props.marginBottom16 &&
+    css`
+      margin-bottom: 16px;
+    `}
 `
+
+export const ContainerQRCode = styled.View`
+  padding: 10px;
+`
+
+export const QRCodeGenerated = styled(QRCode).attrs(props => ({
+  value: 'https://github.com/VagnerNerves',
+  size: 140
+}))``
 
 export const IconAirplane = styled(Ionicons).attrs(props => ({
   name: 'airplane',
