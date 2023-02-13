@@ -19,7 +19,8 @@ const data = {
     departureTime: '17:00',
     arrivalCity: 'São Francisco, EUA',
     abbreviationOfFlightArrival: 'SFO',
-    arrivalTime: '04:48'
+    arrivalTime: '04:48',
+    extraArrivalTime: '+1'
   },
   passenger: {
     name: 'Vagner Nerves',

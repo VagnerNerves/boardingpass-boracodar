@@ -11,6 +11,7 @@ import {
   IconAirplane,
   Information,
   TitleAbbreviation,
+  TitleExtraTime,
   TitleInformation,
   TitleTime
 } from './styles'
@@ -25,6 +26,7 @@ interface BoardingPassCardProps {
     arrivalCity: string
     abbreviationOfFlightArrival: string
     arrivalTime: string
+    extraArrivalTime: string
   }
   passenger: {
     name: string
@@ -79,7 +81,12 @@ export function BoardingPassCard({
             <TitleAbbreviation textAlignRight>
               {flight.abbreviationOfFlightArrival}
             </TitleAbbreviation>
-            <TitleTime textAlignRight>{flight.arrivalTime}</TitleTime>
+            <ContainerTextData isFlexDirectionColumn isFlexEnd>
+              <TitleTime textAlignRight>{flight.arrivalTime}</TitleTime>
+              <TitleExtraTime textAlignRight>
+                {flight.extraArrivalTime}
+              </TitleExtraTime>
+            </ContainerTextData>
           </ContainerTextData>
         </ContainerText>
 

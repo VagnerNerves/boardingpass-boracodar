@@ -45,8 +45,18 @@ export const ContainerText = styled.View<PropsContainerText>`
     props.justifyContentCenter ? 'center' : 'space-between'};
 `
 
-export const ContainerTextData = styled.View`
-  justify-content: center;
+interface ContainerTextDataProps {
+  isFlexDirectionColumn?: boolean
+  isFlexEnd?: boolean
+}
+export const ContainerTextData = styled.View<ContainerTextDataProps>`
+  justify-content: ${props => (props.isFlexEnd ? 'flex-end' : 'center')};
+
+  ${props =>
+    props.isFlexDirectionColumn &&
+    css`
+      flex-direction: row;
+    `}
 `
 
 interface BaseTextProps {
@@ -110,6 +120,14 @@ export const TitleAbbreviation = styled(BaseText)`
 
 export const TitleTime = styled(BaseText)`
   ${props => css`
+    color: ${props.theme.colors['grey-900']};
+  `}
+`
+
+export const TitleExtraTime = styled(BaseText)`
+  ${props => css`
+    font-family: ${props.theme['font-family'].medium};
+    font-size: ${props.theme['font-size'].xs}px;
     color: ${props.theme.colors['grey-900']};
   `}
 `
