@@ -2,7 +2,7 @@
   <img alt="Boarding Pass" title="Boarding Pass" src="./.github/logoboardingpass.svg" />
 </h1>
 
-I developed the Boarding Pass, where I developed the layout and added the functionality to generate QRCode according to data passed from the boarding pass.
+I developed the Boarding Pass in React Native, where I developed the layout and added the functionality to generate QRCode according to data passed from the boarding pass.
 
 ## 🎥 Implementation Video
 
