@@ -1,4 +1,5 @@
 import { BoardingPassCard } from '../../components/BoardingPassCard'
+import { Header } from '../../components/Header'
 
 import {
   Container,
@@ -37,6 +38,8 @@ export function BoardingPass() {
   return (
     <Container>
       <ApllyLinearGradient />
+
+      <Header />
 
       <ContainerBoardPass>
         <Title>Cartão de Embarque</Title>
