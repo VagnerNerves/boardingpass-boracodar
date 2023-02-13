@@ -7,9 +7,6 @@ import { LinearGradient } from 'expo-linear-gradient'
 export const Container = styled(SafeAreaView)`
   flex: 1;
 
-  align-items: center;
-  justify-content: center;
-
   background-color: ${props => props.theme.colors['violet-500']};
 `
 
@@ -19,8 +16,19 @@ export const ApllyLinearGradient = styled(LinearGradient).attrs(
   })
 )`
   position: absolute;
-  width: 100%;
-  height: 100%;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+
+  flex: 1;
+`
+
+export const ContainerBoardPass = styled.View`
+  flex: 1;
+
+  align-items: center;
+  justify-content: center;
 `
 
 export const Title = styled.Text`

@@ -1,5 +1,12 @@
 import { BoardingPassCard } from '../../components/BoardingPassCard'
-import { Container, ApllyLinearGradient, Description, Title } from './styles'
+
+import {
+  Container,
+  ApllyLinearGradient,
+  Description,
+  Title,
+  ContainerBoardPass
+} from './styles'
 
 const data = {
   flight: {
@@ -31,17 +38,20 @@ export function BoardingPass() {
     <Container>
       <ApllyLinearGradient />
 
-      <Title>Cartão de Embarque</Title>
+      <ContainerBoardPass>
+        <Title>Cartão de Embarque</Title>
 
-      <BoardingPassCard
-        flight={data.flight}
-        passenger={data.passenger}
-        boarding={data.boarding}
-      />
+        <BoardingPassCard
+          flight={data.flight}
+          passenger={data.passenger}
+          boarding={data.boarding}
+        />
 
-      <Description>
-        Qualquer problema procure o balcão de atendimento da sua companhia aérea
-      </Description>
+        <Description>
+          Qualquer problema procure o balcão de atendimento da sua companhia
+          aérea
+        </Description>
+      </ContainerBoardPass>
     </Container>
   )
 }

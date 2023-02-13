@@ -1,6 +1,8 @@
 import { StatusBar } from 'react-native'
 import { ThemeProvider } from 'styled-components/native'
 
+import { SafeAreaProvider } from 'react-native-safe-area-context'
+
 import {
   useFonts,
   Rubik_400Regular,
@@ -22,8 +24,9 @@ export default function App() {
         backgroundColor="transparent"
         translucent
       />
-
-      {fonstLoaded ? <BoardingPass /> : <Loading />}
+      <SafeAreaProvider>
+        {fonstLoaded ? <BoardingPass /> : <Loading />}
+      </SafeAreaProvider>
     </ThemeProvider>
   )
 }
