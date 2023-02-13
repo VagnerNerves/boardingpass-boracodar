@@ -31,7 +31,7 @@ const data = {
     boardingTerminal: '2',
     boardingGate: '15',
     boardingGroup: '3',
-    boardingPassUrl: 'https://github.com/VagnerNerves',
+    boardingPassUrl: 'https://github.com/VagnerNerves/boardingpass-boracodar',
     boardingGateClosingTime: '16:45'
   }
 }
