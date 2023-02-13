@@ -1,3 +1,4 @@
+import { ScrollView } from 'react-native'
 import { BoardingPassCard } from '../../components/BoardingPassCard'
 import { Header } from '../../components/Header'
 
@@ -42,18 +43,27 @@ export function BoardingPass() {
       <Header />
 
       <ContainerBoardPass>
-        <Title>Cartão de Embarque</Title>
+        <ScrollView
+          showsVerticalScrollIndicator={false}
+          contentContainerStyle={{
+            flexGrow: 1,
+            justifyContent: 'center',
+            alignItems: 'center'
+          }}
+        >
+          <Title>Cartão de Embarque</Title>
 
-        <BoardingPassCard
-          flight={data.flight}
-          passenger={data.passenger}
-          boarding={data.boarding}
-        />
+          <BoardingPassCard
+            flight={data.flight}
+            passenger={data.passenger}
+            boarding={data.boarding}
+          />
 
-        <Description>
-          Qualquer problema procure o balcão de atendimento da sua companhia
-          aérea
-        </Description>
+          <Description>
+            Qualquer problema procure o balcão de atendimento da sua companhia
+            aérea
+          </Description>
+        </ScrollView>
       </ContainerBoardPass>
     </Container>
   )
