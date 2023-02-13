@@ -4,9 +4,13 @@
 
 I developed the Boarding Pass, where I developed the layout and added the functionality to generate QRCode according to data passed from the boarding pass.
 
-<!-- ## 🎥 Implementation Video
+## 🎥 Implementation Video
 
-In the GitHub edit, drag the video that it already puts on github itself. -->
+
+
+https://user-images.githubusercontent.com/40831841/218581351-3f6e7d19-8c77-488c-bc33-2b80eb8b893a.mp4
+
+
 
 ## 🎨 Layout
 
